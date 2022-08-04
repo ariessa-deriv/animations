@@ -67,12 +67,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         ),
         builder: (BuildContext? context, EdgeInsets? value, Widget? child) {
           return Container(
-            color: Colors.blue.shade500,
+            color: Colors.blue.shade300,
             padding: value!,
-            child: Container(
-                color: Colors.blue.shade300, width: 100.0, height: 100.0),
+            child: child!,
           );
         },
+        child:
+            Container(color: Colors.blue.shade200, width: 100.0, height: 100.0),
         duration: Duration(seconds: 4),
       ),
     );
