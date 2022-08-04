@@ -1,3 +1,4 @@
+import 'package:animations/multiple_animations.dart';
 import 'package:animations/simple_scale_animation.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Code Sample'),
+      home: MultipleAnimations(),
     );
   }
 }
@@ -40,13 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-        centerTitle: true,
-      ),
-      body: const SimpleScaleAnimation(),
-    );
+    return MultipleAnimations();
   }
 }
 
