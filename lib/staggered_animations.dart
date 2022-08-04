@@ -21,10 +21,10 @@ class _StaggeredAnimationsState extends State<StaggeredAnimations>
         AnimationController(vsync: this, duration: const Duration(seconds: 2));
     _scaleAnimation = CurvedAnimation(
         parent: _animationController,
-        curve: Interval(0.0, 0.5, curve: Curves.easeOutCubic));
+        curve: const Interval(0.0, 0.5, curve: Curves.linear));
     _rotateAnimation = Tween<double>(begin: 0.0, end: 2 * 3.14159265).animate(
         CurvedAnimation(
-            parent: _animationController, curve: Interval(0.0, 0.5)));
+            parent: _animationController, curve: const Interval(0.5, 1.0)));
 
     _animationController.addListener(() {
       setState(() {});
@@ -40,10 +40,13 @@ class _StaggeredAnimationsState extends State<StaggeredAnimations>
 
   @override
   Widget build(BuildContext context) {
-    return Transform.rotate(
-        angle: _rotateAnimation.value,
-        child: Transform.scale(
-            scale: _scaleAnimation.value,
-            child: Container(color: Colors.deepOrange, width: 50, height: 50)));
+    return Center(
+      child: Transform.rotate(
+          angle: _rotateAnimation.value,
+          child: Transform.scale(
+              scale: _scaleAnimation.value,
+              child: Container(
+                  color: Colors.deepOrange, width: 100, height: 100))),
+    );
   }
 }

@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: StaggeredAnimations(),
+      home: MyHomePage(title: 'Flutter Code Sample'),
     );
   }
 }
@@ -42,7 +42,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return MultipleAnimations();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+        centerTitle: true,
+      ),
+      body: const StaggeredAnimations(),
+    );
   }
 }
 

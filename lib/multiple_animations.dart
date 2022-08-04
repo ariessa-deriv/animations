@@ -19,8 +19,8 @@ class _MultipleAnimationsState extends State<MultipleAnimations>
 
     _animationController =
         AnimationController(vsync: this, duration: const Duration(seconds: 3));
-    _scaleAnimation = CurvedAnimation(
-        parent: _animationController, curve: Curves.easeOutCubic);
+    _scaleAnimation =
+        CurvedAnimation(parent: _animationController, curve: Curves.linear);
     _rotateAnimation = Tween<double>(begin: 0.0, end: 2 * 3.14159265)
         .animate(_animationController);
 
