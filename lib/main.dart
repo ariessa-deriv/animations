@@ -68,15 +68,20 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         });
       },
       child: Center(
-        child: AnimatedContainer(
-          width: selected ? 200.0 : 100.0,
-          height: selected ? 100.0 : 200.0,
-          alignment: Alignment.center,
-          duration: const Duration(seconds: 1),
-          color: Colors.amber,
-          curve: Curves.elasticOut,
-        ),
-      ),
+          child: TweenAnimationBuilder(
+        builder: (BuildContext? context, Color? value, Widget? child) {
+          return ColorFiltered(
+            colorFilter: ColorFilter.mode(value!, BlendMode.modulate),
+            child: Container(
+              width: 100.0,
+              height: 100.0,
+              color: Colors.white,
+            ),
+          );
+        },
+        duration: Duration(seconds: 4),
+        tween: ColorTween(begin: Colors.blue, end: Colors.yellow),
+      )),
     );
   }
 }
