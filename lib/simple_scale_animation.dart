@@ -10,13 +10,17 @@ class SimpleScaleAnimation extends StatefulWidget {
 class _SimpleScaleAnimationState extends State<SimpleScaleAnimation>
     with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
+  late Animation _animation;
 
   @override
   void initState() {
     super.initState();
 
     _animationController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+        AnimationController(vsync: this, duration: const Duration(seconds: 2));
+
+    _animation =
+        CurvedAnimation(parent: _animationController, curve: Curves.bounceOut);
 
     _animationController.addListener(() {
       setState(() {});
@@ -34,7 +38,7 @@ class _SimpleScaleAnimationState extends State<SimpleScaleAnimation>
   Widget build(BuildContext context) {
     return Center(
       child: Transform.scale(
-        scale: _animationController.value,
+        scale: _animation.value,
         child: Container(color: Colors.deepOrange, width: 50.0, height: 50.0),
       ),
     );
