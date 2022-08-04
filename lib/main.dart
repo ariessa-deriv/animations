@@ -1,5 +1,6 @@
 import 'package:animations/multiple_animations.dart';
 import 'package:animations/simple_scale_animation.dart';
+import 'package:animations/staggered_animations.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MultipleAnimations(),
+      home: StaggeredAnimations(),
     );
   }
 }
