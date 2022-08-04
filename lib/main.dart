@@ -1,3 +1,4 @@
+import 'package:animations/simple_scale_animation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -44,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
         centerTitle: true,
       ),
-      body: const MyStatefulWidget(),
+      body: const SimpleScaleAnimation(),
     );
   }
 }
