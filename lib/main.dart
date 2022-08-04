@@ -74,6 +74,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           alignment: Alignment.center,
           duration: const Duration(seconds: 1),
           color: Colors.amber,
+          curve: Curves.elasticOut,
         ),
       ),
     );
